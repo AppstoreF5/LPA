@@ -1,0 +1,6 @@
+Test Customer
+102 Street Place
+Retail Worker
+0.0
+0
+c
