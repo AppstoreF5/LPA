@@ -252,7 +252,7 @@ public void createApp() throws IOException
 {
     Account aA = new Account(activeAccount);
     int cNum = numOfApps;
-    try{               
+    //try{               
     Scanner in = new Scanner(System.in);  
     Scanner inc = new Scanner(System.in);
                     System.out.println("What is the App's name?");
@@ -292,11 +292,11 @@ public void createApp() throws IOException
                     else 
                     {appMng();}    
                     }
- catch(IOException e)
-{
-    System.out.println("Dun Goofed");
-}
-}
+ //catch(IOException e)
+//{
+//    System.out.println("Dun Goofed");
+//}
+//}
 public void createAcc(boolean newacc) throws IOException
 {
      
@@ -407,7 +407,7 @@ public void editAcc() throws FileNotFoundException, IOException
             BufferedReader br1 = new BufferedReader(fr1);
             
 
-            int numberOfLines = 3;
+            int numberOfLines = 6;
             String[] textData = new String[numberOfLines];
             for (int b = 0; b < numberOfLines; b++) {        
             textData[b] = br1.readLine(); }
@@ -536,7 +536,7 @@ public void editApp() throws IOException
     String path = accDir+ach+".txt";
     String newline = System.getProperty("line.separator");
     
-            
+            System.out.println(path);
             FileReader fr1 = new FileReader(path);
             BufferedReader br1 = new BufferedReader(fr1);
             
