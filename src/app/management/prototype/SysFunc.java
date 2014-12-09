@@ -429,13 +429,13 @@ public void editAcc() throws FileNotFoundException, IOException
             String editMade = in.nextLine();
             switch (inc) {
             case "1":
-                editLine = editMade + newline + textData[1] + newline + textData[2];
+                editLine = editMade + newline + textData[1] + newline + textData[2]+ newline + textData[3] + newline + textData[4] + newline + textData[5];
                 break;
             case "2":
-                editLine = textData[0] + newline + editMade + newline + textData[2];
+                editLine = textData[0] + newline + editMade + newline + textData[2] + newline + textData[3] + newline +textData[4] + newline + textData[5];
                 break;
             case "3":
-                editLine = textData[0] + newline + textData[1] + newline + editMade;
+                editLine = textData[0] + newline + textData[1] + newline + editMade + newline + textData[3] + newline + textData[4]+ newline + textData[5];
                 break;
         }
                   
