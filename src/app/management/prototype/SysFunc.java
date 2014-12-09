@@ -100,7 +100,7 @@ public void devMenu() throws IOException
 {
     Account aA = new Account(activeAccount);
     Scanner in = new Scanner(System.in);    
-    System.out.println("Logged in as "+aA.getName()+" with £"+aA.getAmountToBePaid()+" to be paid");
+    System.out.println("Logged in as "+aA.getName());
     System.out.println("-----------------------");
     System.out.println("Main Menu?");
         System.out.println("1.Edit Account");
@@ -273,7 +273,7 @@ public void createApp() throws IOException
                     if(ifp==1){iff="Free";}
                     else {iff="Purchasing";}
                     
-                    File f = new File(appDir+cNum+".txt");
+                    File f = new File(appDir+cNum);
                     do { cNum ++;} while(f.exists());
                     writeToFile(cNum, n, "app");
                     writeToFile(cNum, a, "app");
@@ -299,7 +299,7 @@ public void createApp() throws IOException
 }
 public void createAcc(boolean newacc) throws IOException
 {
-    Account aA = new Account(activeAccount); 
+     
     int cNum = numOfAccounts;
                     Scanner in = new Scanner(System.in);          
                     System.out.println("What is your Full Name?");
