@@ -13,12 +13,17 @@ import java.nio.file.Paths;
 
 
 public class SysFunc {
+    
+    
+    
     Path currentRelativePath = Paths.get("");
     public String accDir = currentRelativePath.toAbsolutePath().toString()+"\\Accounts\\";
     public String appDir = currentRelativePath.toAbsolutePath().toString()+"\\Apps\\";
     public int activeAccount;
     public int numOfAccounts = new File(accDir).list().length;
     public int numOfApps = new File(appDir).list().length;
+    public int pata;
+    public int fata;
     Scanner i = new Scanner(System.in);
     
 // MENUS    
@@ -31,6 +36,8 @@ public void adminMenu() throws IOException
     System.out.println("What do you want to manage?");
         System.out.println("1.Accounts");
         System.out.println("2.Apps");
+        System.out.println("3.Total bought Apps");
+        System.out.println("4.Total used free Apps");
         System.out.println("Type a number to select an option");
         System.out.println("-----------------------");
         String choice = in.nextLine();
@@ -40,6 +47,16 @@ public void adminMenu() throws IOException
                 break;
             case "2":
                 appMng();
+                break;
+            case "3":
+                System.out.println("-----------------------");
+                System.out.println(pata+" Apps have been bought");
+                adminMenu();
+                break;
+            case "4":
+                System.out.println("-----------------------");
+                System.out.println(fata+" free Apps have been used");
+                adminMenu();
                 break;
             default:
             System.out.println("Not a valid option.");
@@ -229,6 +246,8 @@ public void appMng() throws IOException
 
 public void logIn() throws IOException
 {
+//    updPata();
+ //   updFata();
     System.out.println("Please type 'new' to create a new account, or press enter to Log In.");
        try{
         String ch = i.nextLine();
@@ -248,6 +267,39 @@ public void logIn() throws IOException
        
 
 //Creators
+/*
+public void updPata() throws IOException
+{
+    String path = appDir+"pata.txt";
+    FileReader patafr = new FileReader(appDir+"pata.txt");
+    BufferedReader patabr = new BufferedReader(patafr);
+    FileWriter fw = new FileWriter(path);
+    BufferedWriter bw = new BufferedWriter(fw);
+    fata = Integer.parseInt(patabr.readLine());
+    int editLine = pata+1;
+            
+            bw.write(editLine);
+            bw.flush();
+            bw.close();
+            
+}
+
+public void updFata() throws IOException
+{
+    String path = appDir+"fata"+".txt";
+    FileReader fatafr = new FileReader(appDir+"fata.txt");
+    BufferedReader fatabr = new BufferedReader(fatafr);
+    FileWriter fw = new FileWriter(path);
+    BufferedWriter bw = new BufferedWriter(fw);
+    fata = Integer.parseInt(fatabr.readLine());
+    int editLine = fata+1;
+            
+            bw.write(editLine);
+            bw.flush();
+            bw.close();
+            
+} */
+
 public void createApp() throws IOException
 {
     Account aA = new Account(activeAccount);
@@ -664,7 +716,7 @@ public void searchApp() throws IOException
     System.out.println("-----------------------");
     String ab = inc.nextLine();
     System.out.println("-----------------------");
-    if(ab.equalsIgnoreCase("yes")){ double tc = aA.getAmountToBePaid()+ap.getCost();
+    if(ab.equalsIgnoreCase("yes")){  double tc = aA.getAmountToBePaid()+ap.getCost();
     aA.setAmountToBePaid(tc, activeAccount); chkPrm();}
     else if (ab.equalsIgnoreCase("no")){ 
    chkPrm();
